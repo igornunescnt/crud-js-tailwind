@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog CRUD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+      }
+    </script>
+  </head>
+  <body class="bg-gray-100 dark:bg-gray-900 min-h-screen p-4 text-gray-900 dark:text-gray-100 transition">
+    <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
+      <div class="flex justify-between items-center mb-4">
+        <h1 class="text-2xl font-bold">Blog CRUD</h1>
+        <button
+          onclick="toggleDarkMode()"
+          class="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700 transition"
+        >
+          Alternar tema
+        </button>
+      </div>
+      <form id="post-form" class="space-y-4">
+        <input type="hidden" id="post-id" />
+        <input
+          type="text"
+          id="title"
+          placeholder="Título"
+          required
+          class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600"
+        />
+        <textarea
+          id="content"
+          placeholder="Conteúdo"
+          required
+          class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600"
+        ></textarea>
+        <button
+          type="submit"
+          class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
+        >
+          Salvar Post
+        </button>
+      </form>
+      <hr class="my-6 border-gray-300 dark:border-gray-600" />
+      <div id="posts" class="space-y-4"></div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
